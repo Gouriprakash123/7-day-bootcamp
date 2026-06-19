@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import profile from "./assets/1111.png";
 
 function App() {
@@ -7,6 +6,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -19,122 +19,159 @@ function App() {
   };
 
   return (
-    <>
-      <header>
-        <nav>
-          <h2>My Porfolio</h2>
+    <div className="bg-slate-50 min-h-screen">
+      
+      {/* Navbar */}
+      <nav className="sticky top-0 z-50 bg-slate-900 text-white px-6 py-4 flex justify-between items-center">
+        <h2 className="text-2xl font-bold">My Portfolio</h2>
 
-          <div
-            className="menu-toggle"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            ☰
-          </div>
-
-          <ul
-            id="nav-links"
-            className={menuOpen ? "show" : ""}
-          >
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-
-          <button>Get Started</button>
-        </nav>
-      </header>
-
-      <section className="profile-section" id="profile">
-        <div className="profile-container">
-          <div className="profile-text">
-            <h2>Goury Prakash</h2>
-            <p>
-              Frontend developer with a passion for creating responsive
-              and user-friendly websites.
-            </p>
-          </div>
-
-          <div className="profile-image">
-            <img src={profile} alt="Profile" />
-          </div>
+        <div
+          className="md:hidden text-3xl cursor-pointer"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
         </div>
+
+        <ul
+          className={`${
+            menuOpen ? "flex" : "hidden"
+          } md:flex flex-col md:flex-row gap-6 absolute md:static top-16 left-0 w-full md:w-auto bg-slate-900 md:bg-transparent p-4 md:p-0`}
+        >
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button className="hidden md:block bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full">
+          Get Started
+        </button>
+      </nav>
+
+      {/* Profile */}
+      <section
+        id="profile"
+        className="min-h-[80vh] flex flex-col md:flex-row items-center justify-center gap-12 px-8 py-16 bg-gradient-to-r from-blue-100 to-slate-100"
+      >
+        <div>
+          <h2 className="text-5xl font-bold text-black">
+            Goury Prakash
+          </h2>
+
+          <p className="mt-4 text-lg text-slate-600 max-w-lg">
+            Frontend developer with a passion for creating responsive and user-friendly websites.
+          </p>
+        </div>
+
+        <img
+          src={profile}
+          alt="Profile"
+          className="w-72 h-72 rounded-full object-cover border-8 border-white shadow-xl"
+        />
       </section>
 
-      <section className="about-section" id="about">
-        <h2>About</h2>
-        <p>
+      {/* About */}
+      <section
+        id="about"
+        className="max-w-5xl mx-auto bg-white p-10 rounded-2xl shadow-lg my-10"
+      >
+        <h2 className="text-3xl font-bold text-center mb-5">About</h2>
+
+        <p className="text-gray-700 leading-8">
           I'm a B.Tech student passionate about technology and web development.
           I am currently learning HTML and CSS.
         </p>
       </section>
 
-      <section className="skills-section" id="skills">
-        <h2>Skills</h2>
-        <ol>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>C</li>
-          <li>C++</li>
-          <li>Java</li>
-        </ol>
+      {/* Skills */}
+      <section
+        id="skills"
+        className="max-w-5xl mx-auto bg-white p-10 rounded-2xl shadow-lg my-10"
+      >
+        <h2 className="text-3xl font-bold text-center mb-5">Skills</h2>
+
+        <div className="flex flex-wrap justify-center gap-4">
+          {["HTML", "CSS", "C", "C++", "Java"].map((skill) => (
+            <span
+              key={skill}
+              className="bg-sky-100 text-sky-700 px-5 py-2 rounded-full font-semibold"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
       </section>
 
-      <section className="contact-section" id="contact">
-        <h2>Contact</h2>
+      {/* Contact */}
+      <section
+        id="contact"
+        className="max-w-5xl mx-auto bg-white p-10 rounded-2xl shadow-lg my-10"
+      >
+        <h2 className="text-3xl font-bold text-center mb-5">Contact</h2>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Name :</label>
-            <input
-              type="text"
-              placeholder="Enter your name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
+        <form
+          className="max-w-md mx-auto space-y-4"
+          onSubmit={handleSubmit}
+        >
+          <input
+            type="text"
+            placeholder="Enter your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full border rounded-lg p-3"
+            required
+          />
 
-          <div className="form-group">
-            <label>Email :</label>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full border rounded-lg p-3"
+            required
+          />
 
-          <button type="submit">Send Message</button>
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700"
+          >
+            Send Message
+          </button>
         </form>
-        </section>
-        
-        {/* My Card Button */}
-        <section className="my-card-section">
+      </section>
+
+      {/* My Card */}
+      <section className="text-center my-12">
         <button
-          className="my-card-btn"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full"
           onClick={() => setShowCard(!showCard)}
         >
           {showCard ? "Hide My Card" : "Show My Card"}
         </button>
 
-        {/* Card */}
         {showCard && (
-          <div className="profile-card">
-            <img src={profile} alt="Profile" />
+          <div className="max-w-sm mx-auto mt-6 bg-white p-6 rounded-2xl shadow-lg">
+            <img
+              src={profile}
+              alt="Profile"
+              className="w-28 h-28 rounded-full mx-auto border-4 border-sky-400"
+            />
 
-            <h3>Goury Prakash</h3>
+            <h3 className="text-xl font-bold mt-4">
+              Goury Prakash
+            </h3>
 
-            <p>Frontend Developer</p>
+            <p className="text-gray-600">Frontend Developer</p>
 
-            <p>💻 HTML | CSS | React</p>
+            <p className="mt-2">💻 HTML | CSS | React</p>
 
-            <p>gouriprakash@example.com</p>
+            <p className="mt-2">
+              📧 gouriprakash@example.com
+            </p>
           </div>
         )}
       </section>
-    </>
+    </div>
   );
 }
 
