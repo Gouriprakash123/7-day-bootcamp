@@ -102,6 +102,46 @@ function App() {
         </div>
       </section>
 
+      <section className="max-w-5xl mx-auto bg-white p-10 rounded-2xl shadow-lg my-10">
+  <h2 className="text-3xl font-bold text-black text-center">
+    Projects
+  </h2>
+
+  <div className="grid md:grid-cols-2 gap-6">
+    <div className="p-6 border rounded-xl shadow-md">
+      <h3 className="text-xl font-bold">Portfolio Website</h3>
+      <p className="mt-2 text-gray-600">
+        Built a responsive portfolio using React and Tailwind CSS.
+      </p>
+    </div>
+
+    <div className="p-6 border rounded-xl shadow-md">
+      <h3 className="text-xl font-bold">7-Day Bootcamp Project</h3>
+      <p className="mt-2 text-gray-600">
+        Created web pages using HTML, CSS, JavaScript and React.
+      </p>
+    </div>
+    <div className="p-6 border rounded-xl shadow-md">
+    <h3 className="text-xl font-semibold mt-6">
+  Electricity Billing Management System
+</h3>
+<p className="text-gray-700">
+  Developed an Electricity Billing Management System to manage customer records and generate electricity bills automatically.
+  The system improves billing accuracy and simplifies customer data management.
+</p>
+</div>
+<div className="p-6 border rounded-xl shadow-md">
+<h3 className="text-xl font-semibold mt-6">
+  Static Branch Prediction Analysis
+</h3>
+<p className="text-gray-700">
+  Developed a Static Branch Prediction Analysis project using Assembly Language as part of Computer Organization and Architecture.
+  The project evaluates branch prediction techniques and their impact on processor performance.
+</p>
+</div>
+  </div>
+</section>
+
       {/* Contact */}
       <section
         id="contact"
@@ -139,6 +179,32 @@ function App() {
           </button>
         </form>
       </section>
+
+      <section className="text-center my-10">
+  <h2 className="text-3xl font-bold text-black mb-6">
+    Connect With Me
+  </h2>
+
+  <div className="flex justify-center gap-4 flex-wrap">
+    <a
+      href="https://github.com/Gouriprakash123"
+      target="_blank"
+      rel="noreferrer"
+      className="bg-black text-white px-6 py-3 rounded-lg"
+    >
+      GitHub
+    </a>
+
+    <a
+      href="https://linkedin.com"
+      target="_blank"
+      rel="noreferrer"
+      className="bg-blue-600 text-white px-6 py-3 rounded-lg"
+    >
+      LinkedIn
+    </a>
+  </div>
+</section>
 
       {/* My Card */}
       <section className="text-center my-12">
