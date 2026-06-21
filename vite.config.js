@@ -5,5 +5,5 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base:'/7-day-bootcamp/',
+  base:process.env.VERCEL ?'/':'/7-day-bootcamp/',
 })
