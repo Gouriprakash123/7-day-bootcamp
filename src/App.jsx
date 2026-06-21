@@ -54,7 +54,7 @@ function App() {
         className="min-h-[80vh] flex flex-col md:flex-row items-center justify-center gap-12 px-8 py-16 bg-gradient-to-r from-blue-100 to-slate-100"
       >
         <div>
-          <h2 className="text-5xl font-bold text-black">
+          <h2 className="text-5xl font-bold"style={{ color: "black" }}>
             Goury Prakash
           </h2>
 
@@ -75,7 +75,7 @@ function App() {
         id="about"
         className="max-w-5xl mx-auto bg-white p-10 rounded-2xl shadow-lg my-10"
       >
-        <h2 className="text-3xl font-bold text-center mb-5">About</h2>
+        <h2 className="text-3xl font-bold text-center text-black">About</h2>
 
         <p className="text-gray-700 leading-8">
           I'm a B.Tech student passionate about technology and web development.
@@ -88,7 +88,7 @@ function App() {
         id="skills"
         className="max-w-5xl mx-auto bg-white p-10 rounded-2xl shadow-lg my-10"
       >
-        <h2 className="text-3xl font-bold text-center mb-5">Skills</h2>
+        <h2 className="text-3xl font-bold text-center text-black">Skills</h2>
 
         <div className="flex flex-wrap justify-center gap-4">
           {["HTML", "CSS", "C", "C++", "Java"].map((skill) => (
@@ -107,7 +107,7 @@ function App() {
         id="contact"
         className="max-w-5xl mx-auto bg-white p-10 rounded-2xl shadow-lg my-10"
       >
-        <h2 className="text-3xl font-bold text-center mb-5">Contact</h2>
+        <h2 className="text-3xl font-bold text-center text-black">Contact</h2>
 
         <form
           className="max-w-md mx-auto space-y-4"
